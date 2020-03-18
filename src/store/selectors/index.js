@@ -1,11 +1,11 @@
 
 const getFetchedData = (state) => state.dataStore.data;
 const getDataToBeDisplayed = (state) => state.dataStore.data;
-const getCurrentPage = (state) => state.dataStore.pagination;
+const getSingleItemData = (state) => state.dataStore.singleItem;
 
 
 export default {
   getFetchedData,
-  getCurrentPage,
+  getSingleItemData,
   getDataToBeDisplayed,
 };

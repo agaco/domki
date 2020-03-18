@@ -20,6 +20,7 @@ function Main() {
        setWindowWidth(window.innerWidth)
      })
     )
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [window.innerWidth]);
 
 
