@@ -18,17 +18,6 @@ export default (state = initialState, action) => {
         ...state,
         singleItem: action.payload,
       };
-      // case actions.SET_DATA_FILTERING: {
-      //   const { search, select } = state.filters;
-      //   const newState = [...state.data]
-      //   .filter(item => select.length > 0 ? select.includes(item.userId) : item)
-      //   .filter(item => search.length > 0 ? (item.body.includes(search) || item.title.includes(search)) : item);
-      //
-      //   return {
-      //     ...state,
-      //     displayedData: newState,
-      //   };
-      // }
 
     default:
       return state;
