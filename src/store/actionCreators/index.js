@@ -1,25 +1,5 @@
 import actions from '../actions';
 
-const setFilters = async (dispatch, payload) => {
-  await dispatch({
-    type: actions.SET_FILTER_ITEM,
-    payload: payload,
-  });
-
-  await dispatch({
-    type: actions.SET_DATA_FILTERING,
-  });
-
-};
-
-
-const setPagination = async (dispatch, payload) => {
-  await dispatch({
-    type: actions.SET_PAGINATION,
-    payload: payload,
-  });
-};
-
 const getDataAction = async (dispatch) => {
 
   await dispatch({
@@ -48,6 +28,4 @@ const getDataAction = async (dispatch) => {
 
 export default  {
   getDataAction,
-  setPagination,
-  setFilters,
 }
