@@ -16,13 +16,7 @@ export default (state = initialState, action) => {
     case actions.GET_DATA_FROM_API_SUCCESS:
       return {
         ...state,
-        data: action.payload,
-        displayedData: action.payload,
-      };
-    case actions.SET_PAGINATION:
-      return {
-        ...state,
-        pagination: action.payload,
+        data: action.payload.houses,
       };
     case actions.SET_FILTER_ITEM:
       return {

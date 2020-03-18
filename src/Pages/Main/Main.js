@@ -1,28 +1,20 @@
-import React, {useEffect, useRef, useState} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import React, {useEffect, useState} from 'react';
 import * as PropTypes from 'prop-types';
-import {Col, Row} from 'antd';
-import selectors from '../../store/selectors';
-import actionCreators from '../../store/actionCreators';
-import {Wrapper, Comment} from './styled';
+import { Col, Row } from 'antd';
+import { Wrapper } from './styled';
 import TextSection from '../../components/Main/TextSection';
-import {Header, MainText, SubHeader} from "../../components/Main/TextSection/styled";
+import ImagesSection from '../../components/Main/ImagesSection';
 
 function Main() {
 
-  const refContainer = useRef(null);
-
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-  // const data = useSelector(state => selectors.getDataToBeDisplayed(state));
-  // const currentItemsRange = useSelector(state => selectors.getCurrentPage(state));
-  // const dispatch = useDispatch();
 
   useEffect(() => {
 
     window.addEventListener('resize', (e) => {
       setWindowWidth(window.innerWidth)
     });
+
     return (
      window.removeEventListener('resize', (e) => {
        setWindowWidth(window.innerWidth)
@@ -31,8 +23,18 @@ function Main() {
   }, [window.innerWidth]);
 
 
+  const imageSize = parseInt(windowWidth/4);
+  const images = [
+   `https://picsum.photos/id/${parseInt(Math.random() * 10)}/${imageSize}/${imageSize}`,
+   `https://picsum.photos/id/${parseInt(Math.random() * 10)}/${imageSize}/${imageSize}`,
+   `https://picsum.photos/id/${parseInt(Math.random() * 10)}/${imageSize}/${imageSize}`,
+   `https://picsum.photos/id/${parseInt(Math.random() * 10)}/${imageSize}/${imageSize}`,
+  ];
+
+   console.log(images);
+
   return (
-   <Row ref={refContainer}>
+   <Row>
      <Col span={12}>
        <Wrapper height={windowWidth}>
          <TextSection target='/domki'
@@ -44,17 +46,21 @@ function Main() {
      </Col>
      <Col span={12}>
        <Wrapper height={windowWidth}>
-         jhghhgh hgfgtre trerer
+         <ImagesSection images={images} size={parseInt(windowWidth/4)}/>
        </Wrapper>
      </Col>
-     {/*<Col span={12}>*/}
-     {/*  <Wrapper>*/}
-     {/*    jhghhgh hgfgtre trerer*/}
-     {/*  </Wrapper>*/}
-     {/*</Col>*/}
      <Col span={12}>
-       <Wrapper height={window.innerWidth}>
-         <TextSection target='/domki'
+       <Wrapper height={windowWidth}>
+         <TextSection target='/list'
+                      header='Nasza Oferta'
+                      subheader='Dowiedz się wiecej'
+                      bodyText='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industryss standard dummy text ever since the'
+         />
+       </Wrapper>
+     </Col>
+     <Col span={12}>
+       <Wrapper height={windowWidth}>
+         <TextSection target='/list'
             header='Nasza Oferta'
             subheader='Dowiedz się wiecej'
             bodyText='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industryss standard dummy text ever since the'

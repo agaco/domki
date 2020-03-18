@@ -23,17 +23,11 @@ function TextSection({
       </SubHeader>
 
       <MainText>
-        {  bodyText }
-
+        { bodyText }
       </MainText>
 
-      <Button type='primary'
-              ghost
-      >
-        <Link
-         activeOnlyWhenExact={true}
-         to={target}
-        >
+      <Button type='primary' ghost>
+        <Link to={target}>
           Zobacz więcej
         </Link>
       </Button>
